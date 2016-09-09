@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', website_view.index, name='index'),
     url(r'^index/', website_view.index, name='index'),
-    url(r'^libapp/', include('website.urls', namespace='website')),
+    url(r'^website/', include('website.urls', namespace='website')),
 ]

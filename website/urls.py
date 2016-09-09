@@ -6,6 +6,7 @@ from website import views as website_views
 
 urlpatterns = [
     url(r'^About/', website_views.about, name='about'),
+    url(r'^Home/', website_views.index, name='index'),
 ]
 
 if settings.DEBUG:
