@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'website/index.html')
+    return render(request, 'website/Index.html')
 
 def about(request):
-    return render(request, 'website/aboutus.html')
+    return render(request, 'website/Aboutus.html')
