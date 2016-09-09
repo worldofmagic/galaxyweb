@@ -8,3 +8,9 @@ def index(request):
 
 def about(request):
     return render(request, 'website/Aboutus.html')
+
+def tools(request):
+    return render(request, 'website/Tools.html')
+
+def blogtwo(request):
+    return render(request, 'website/Blogtwo.html')

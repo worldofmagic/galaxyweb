@@ -25,6 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="{% static 'website/images/ico/apple-touch-icon-57-precomposed.png' %}">
 </head><!--/head-->
 
+{% block body %}
 <body>
     {% block header %}
 	<header id="header">
@@ -64,19 +65,17 @@
                         <li class="dropdown"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="{% url 'website:about' %}">About</a></li>
-                                <li><a href="Aboutus2.html">About 2</a></li>
+                                <li><a href="{% url 'website:tools' %}">Tools</a></li>x
                                 <li><a href="Service.html">Services</a></li>
                                 <li><a href="Pricing.html">Pricing</a></li>
                                 <li><a href="Contact.html">Contact us</a></li>
-                                <li><a href="Contact2.html">Contact us 2</a></li>
-                                <li><a href="404.html">404 error</a></li>
                                 <li><a href="Coming-soon.html">Coming Soon</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="Blog.html">Blog <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="Blog.html">Blog Default</a></li>
-                                <li><a href="Blogtwo.html">Timeline Blog</a></li>
+                                <li><a href="{% url 'website:blog' %}">Timeline Blog</a></li>
                                 <li><a href="Blogone.html">2 Columns + Right Sidebar</a></li>
                                 <li><a href="Blogthree.html">1 Column + Left Sidebar</a></li>
                                 <li><a href="Blogfour.html">Blog Masonary</a></li>
@@ -351,4 +350,5 @@
     <script type="text/javascript" src="{% static 'website/js/wow.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'website/js/main.js' %}"></script>
 </body>
+{% endblock %}
 </html>

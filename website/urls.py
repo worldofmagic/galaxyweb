@@ -7,6 +7,8 @@ from website import views as website_views
 urlpatterns = [
     url(r'^About/', website_views.about, name='about'),
     url(r'^Home/', website_views.index, name='index'),
+    url(r'^Tools/', website_views.tools, name='tools'),
+    url(r'^Blog/', website_views.blogtwo, name='blog'),
 ]
 
 if settings.DEBUG:
