@@ -1,2 +1,64 @@
 {% extends "website/MainBase.html" %}
 {% block title %}Tools{% endblock %}
+{% block content %}
+
+    <div id="links-div">
+        <form action="{% url 'website:tools' %}" method='post'>
+            {% csrf_token %}
+            {% load bootstrap %}
+            {{ form|bootstrap }}
+            <p class="form-actions">
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>result</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>hits:</th>
+                <th>{{ re_dict.hits }}</th>
+            </tr>
+            </tbody>
+
+            {% for alignment in re_dict.alignments %}
+                <table class="table" contenteditable="true">
+                {% for hsp in alignment %}
+                    <tr>
+                        <td>{{ hsp.seq }}</td>
+                    </tr>
+                    <tr class="success">
+                        <td>{{ hsp.eval }}</td>
+                    </tr>
+                    <tr class="warning">
+                        <td>{{ hsp.ident }}</td>
+                    </tr>
+                    <tr class="error">
+                        <td>{{ hsp.query }}</td>
+                    </tr>
+                    <tr class="info">
+                        <td>{{ hsp.match }}</td>
+                    </tr>
+                    <tr class="success">
+                        <td>{{ hsp.sbjct }}</td>
+                    </tr>
+                    <td></td>
+                    <td></td>
+
+                {% empty %}
+                {% endfor %}
+            {% empty %}
+            {% endfor %}
+
+            </table>
+    </div>
+
+
+
+{% endblock %}
